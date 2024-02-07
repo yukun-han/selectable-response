@@ -11,12 +11,16 @@
   "homepage": "https://github.com/yukun-han/selectable-response",
   "license": "MIT",
   "packageManager": "pnpm@8.15.1",
+  "exports": {
+    "import": "./dist/esm/index.js",
+    "require": "./dist/cjs/index.js",
+    "default": "./dist/esm/index.js"
+  },
   "scripts": {
     "start": "node dist/src/index.js",
     "clean": "rm -rf dist tests/coverage",
     "prebuild": "pnpm run check",
-    "build": "tsc -p tsconfig.json",
-    "build:release": "pnpm run clean && tsc -p tsconfig.release.json",
+    "build": "pnpm run clean && tsc -p tsconfig.esm.json && tsc -p tsconfig.cjs.json",
     "check": "biome check .",
     "check:fix": "biome check --apply .",
     "test": "jest --coverage",

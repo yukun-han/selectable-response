@@ -6,8 +6,16 @@
   "engines": {
     "node": ">= 20"
   },
-  "keywords": ["Mocks Server", "mock", "variant handler", "plugin"],
-  "contributors": ["Yukun Han <yukun.han@thoughtworks.com>", "Han Chen <han.chen1@thoughtworks.com>"],
+  "keywords": [
+    "Mocks Server",
+    "mock",
+    "variant handler",
+    "plugin"
+  ],
+  "contributors": [
+    "Yukun Han <yukun.han@thoughtworks.com>",
+    "Han Chen <han.chen1@thoughtworks.com>"
+  ],
   "homepage": "https://github.com/yukun-han/selectable-response",
   "license": "MIT",
   "packageManager": "pnpm@8.15.1",
@@ -27,9 +35,13 @@
     "lint-staged": "lint-staged",
     "prepare": "husky"
   },
+  "lint-staged": {
+    "*.{js,ts,mjs,d.mts,jsx,tsx,json,jsonc}": "biome check --apply --no-errors-on-unmatched"
+  },
   "devDependencies": {
     "@biomejs/biome": "~1.5.3",
     "@types/jest": "~29.5",
+    "@types/jsonpath": "^0.2.4",
     "@types/node": "^20.10.0",
     "husky": "^9.0.10",
     "jest": "~29.7",
@@ -37,7 +49,8 @@
     "ts-jest": "~29.1",
     "typescript": "~5.2"
   },
-  "lint-staged": {
-    "*.{js,ts,mjs,d.mts,jsx,tsx,json,jsonc}": "biome check --apply --no-errors-on-unmatched"
+  "dependencies": {
+    "@mocks-server/core": "^4.0.2",
+    "jsonpath": "^1.1.1"
   }
 }

@@ -51,6 +51,7 @@
   },
   "dependencies": {
     "@mocks-server/core": "^4.0.2",
+    "ajv": "^8.12.0",
     "jsonpath": "^1.1.1"
   }
 }

@@ -3,6 +3,8 @@
     "target": "ES2022",
     "lib": ["ES2022"],
     "rootDir": ".",
+    "module": "Node16",
+    "moduleResolution": "Node16",
     "allowSyntheticDefaultImports": true,
     "importHelpers": true,
     "alwaysStrict": true,
@@ -14,7 +16,7 @@
     "noUnusedParameters": true,
     "noImplicitAny": false,
     "noImplicitThis": false,
-    "strictNullChecks": false,
+    "strictNullChecks": true,
     "removeComments": true
   },
   "include": ["src/**/*"],

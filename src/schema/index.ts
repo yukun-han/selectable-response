@@ -1,15 +1,15 @@
 import type { JSONSchemaType } from 'ajv';
-import BodySelectorSchema from './bodySelector/schema.js';
-import HeaderSelectorSchema from './headerSelector/schema.js';
-import PathSelectorSchema from './pathSelector/schema.js';
-import QuerySelectorSchema from './querySelector/schema.js';
+import bodySelectorSchema from './bodySelector/schema.js';
+import headerSelectorSchema from './headerSelector/schema.js';
+import pathSelectorSchema from './pathSelector/schema.js';
+import querySelectorSchema from './querySelector/schema.js';
 import type { SelectorBase } from './types.js';
 
-const SelectorsSchema: JSONSchemaType<SelectorBase[]> = {
+const selectorsSchema: JSONSchemaType<SelectorBase[]> = {
   type: 'array',
   items: {
-    anyOf: [BodySelectorSchema, HeaderSelectorSchema, PathSelectorSchema, QuerySelectorSchema],
+    anyOf: [bodySelectorSchema, headerSelectorSchema, pathSelectorSchema, querySelectorSchema],
   },
 };
 
-export default SelectorsSchema;
+export default selectorsSchema;

@@ -1,6 +1,6 @@
 import type { JSONSchemaType } from 'ajv';
 
-type DualEqualityConditions<Props> = Props & {
+export type SelectorBase<Props = Record<string, string>> = Props & {
   equals: string;
   matchReg: string;
 };
@@ -9,15 +9,17 @@ type BodySelectorProps = {
   bodyJsonPath: string;
   equals: string | number | boolean;
 };
-type HeaderSelectorProps = DualEqualityConditions<{
+type HeaderSelectorProps = SelectorBase<{
   headerKey: string;
 }>;
-type PathSelectorProps = DualEqualityConditions<{
+type PathSelectorProps = SelectorBase<{
   pathVariable: string;
 }>;
-type QuerySelectorProps = DualEqualityConditions<{
+type QuerySelectorProps = SelectorBase<{
   queryParams: string;
 }>;
+
+export type AllSelectorProps = BodySelectorProps | HeaderSelectorProps | PathSelectorProps | QuerySelectorProps;
 
 export type BodySelectorSchemaType = JSONSchemaType<BodySelectorProps>;
 export type HeaderSelectorSchemaType = JSONSchemaType<HeaderSelectorProps>;

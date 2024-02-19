@@ -1,5 +1,7 @@
+import type { NextFunction, Request, Response } from 'express';
 import isAbleToRunHandler from '../helpers/isAbleToRunHandler.js';
 import SelectorsSchema from '../schema/index.js';
+import type { MockServerCore, MockServerOptions } from './types.js';
 
 const Middleware = require('@mocks-server/core/src/variant-handlers/handlers/Middleware');
 
@@ -15,19 +17,19 @@ class ExtendedMiddlewareHandler extends Middleware {
         middleware: {
           instanceof: 'Function',
         },
-        ...SelectorsSchema,
+        selectors: SelectorsSchema,
       },
       required: ['middleware'],
       additionalProperties: false,
     };
   }
 
-  constructor(options, core) {
+  constructor(options: MockServerOptions, core: MockServerCore) {
     super(options, core);
     this._options = options;
   }
 
-  middleware(req, res, next) {
+  middleware(req: Request, res: Response, next: NextFunction) {
     if (isAbleToRunHandler(this._options.selectors, req)) {
       return super.middleware(req, res, next);
     }

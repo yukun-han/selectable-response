@@ -4,7 +4,6 @@
     "lib": ["ES2022"],
     "rootDir": ".",
     "module": "Node16",
-    "moduleResolution": "Node16",
     "allowSyntheticDefaultImports": true,
     "importHelpers": true,
     "alwaysStrict": true,

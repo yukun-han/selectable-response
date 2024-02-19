@@ -1,7 +1,9 @@
+import type { Request } from 'express';
 import { query } from 'jsonpath';
+import type { AllSelectorProps, SelectorBase } from '../schema/types.js';
 
-const notMatchSelector = (value, selector) => {
-  let conditionsNotMatches: boolean;
+const notMatchSelector = (value: any, selector: SelectorBase): boolean => {
+  let conditionsNotMatches = false;
   if (selector.equals) {
     conditionsNotMatches = !(value === selector.equals);
   } else {
@@ -11,7 +13,7 @@ const notMatchSelector = (value, selector) => {
   return conditionsNotMatches;
 };
 
-const isAbleToRunMiddleware = (selectors, req) => {
+const isAbleToRunMiddleware = (selectors: AllSelectorProps[], req: Request): boolean => {
   let satisfySelectorsCondition = true;
   if (selectors) {
     for (const selector of selectors) {

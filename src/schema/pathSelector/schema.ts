@@ -1,4 +1,4 @@
-import type { PathSelectorSchemaType } from '../types.js';
+import type { PathSelectorSchemaType } from '../../types.js';
 
 const schema: PathSelectorSchemaType = {
   type: 'object',

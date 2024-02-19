@@ -1,7 +1,7 @@
 import type { NextFunction, Request, Response } from 'express';
 import isAbleToRunHandler from '../helpers/isAbleToRunHandler.js';
 import selectorsSchema from '../schema/index.js';
-import type { MockServerCore, MockServerOptions } from './types.js';
+import type { MockServerCore, MockServerOptions } from '../types.js';
 
 const Json = require('@mocks-server/core/src/variant-handlers/handlers/Json');
 

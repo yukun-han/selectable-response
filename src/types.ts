@@ -25,3 +25,11 @@ export type BodySelectorSchemaType = JSONSchemaType<BodySelectorProps>;
 export type HeaderSelectorSchemaType = JSONSchemaType<HeaderSelectorProps>;
 export type PathSelectorSchemaType = JSONSchemaType<PathSelectorProps>;
 export type QuerySelectorSchemaType = JSONSchemaType<QuerySelectorProps>;
+
+export type MockServerCore = {
+  logger: any;
+};
+
+export type MockServerOptions = Record<string, any> & {
+  selectors: AllSelectorProps[];
+};

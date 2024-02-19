@@ -1,6 +1,6 @@
 import type { Request } from 'express';
 import { query } from 'jsonpath';
-import type { AllSelectorProps, SelectorBase } from '../schema/types.js';
+import type { AllSelectorProps, SelectorBase } from '../types.js';
 
 const notMatchSelector = (value: any, selector: SelectorBase): boolean => {
   let conditionsNotMatches = false;

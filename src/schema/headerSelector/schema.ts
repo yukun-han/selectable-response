@@ -1,4 +1,4 @@
-import type { HeaderSelectorSchemaType } from '../types.js';
+import type { HeaderSelectorSchemaType } from '../../types.js';
 
 const schema: HeaderSelectorSchemaType = {
   type: 'object',

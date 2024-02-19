@@ -2,8 +2,6 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "module": "Node16",
-    "outDir": "dist/esm",
-    "declaration": true,
-    "declarationDir": "dist/types"
+    "outDir": "dist/esm"
   }
 }

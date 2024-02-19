@@ -1,4 +1,4 @@
-import type { QuerySelectorSchemaType } from '../types.js';
+import type { QuerySelectorSchemaType } from '../../types.js';
 
 const schema: QuerySelectorSchemaType = {
   type: 'object',

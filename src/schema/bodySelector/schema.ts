@@ -1,4 +1,4 @@
-import type { BodySelectorSchemaType } from '../types.js';
+import type { BodySelectorSchemaType } from '../../types.js';
 
 const schema: BodySelectorSchemaType = {
   type: 'object',

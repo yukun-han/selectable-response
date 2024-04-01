@@ -2,12 +2,14 @@ export default {
   testEnvironment: 'node',
   preset: 'ts-jest/presets/default-esm',
   transform: {
-    '^.+\\.m?[tj]s?$': ['ts-jest', { useESM: true }],
+    '^.+\\.[t]s?$': ['ts-jest', { useESM: true }],
   },
   moduleNameMapper: {
-    '^(\\.{1,2}/.*)\\.(m)?js$': '$1',
+    '^(\\.{1,2}/.*)\\.js$': '$1',
   },
-  testRegex: '(/tests/.*|(\\.|/)(test|spec))\\.(m)?ts$',
+  testMatch: ['**/tests/**/*.test.ts'],
   coverageDirectory: 'tests/coverage',
-  collectCoverageFrom: ['src/**/*.ts', 'src/**/*.mts', '!src/**/*.d.ts', '!src/**/*.d.mts'],
+  collectCoverageFrom: ['src/**/*.ts', '!src/**/*.d.ts'],
+  collectCoverage: true,
+  maxWorkers: 1,
 };

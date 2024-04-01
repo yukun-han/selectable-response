@@ -37,7 +37,7 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "*.{js,ts,mjs,d.mts,jsx,tsx,json,jsonc}": "biome check --apply --no-errors-on-unmatched"
+    "*.{js,ts,json}": "biome check --apply --no-errors-on-unmatched"
   },
   "devDependencies": {
     "@biomejs/biome": "~1.5",

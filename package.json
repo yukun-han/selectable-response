@@ -3,20 +3,11 @@
   "version": "0.1.0",
   "description": "Customized variant handlers for Mocks Server to return response by selectors.",
   "type": "module",
-  "engines": {
-    "node": ">= 20"
+  "keywords": ["Mocks Server", "mock", "variant handler", "plugin"],
+  "contributors": ["Yukun Han <yukun.han@thoughtworks.com>", "Han Chen <han.chen1@thoughtworks.com>"],
+  "repository": {
+    "url": "https://github.com/yukun-han/selectable-response"
   },
-  "keywords": [
-    "Mocks Server",
-    "mock",
-    "variant handler",
-    "plugin"
-  ],
-  "contributors": [
-    "Yukun Han <yukun.han@thoughtworks.com>",
-    "Han Chen <han.chen1@thoughtworks.com>"
-  ],
-  "homepage": "https://github.com/yukun-han/selectable-response",
   "license": "MIT",
   "packageManager": "pnpm@8.15.1",
   "main": "./dist/cjs/index.js",
@@ -27,6 +18,7 @@
     "require": "./dist/cjs/index.js",
     "default": "./dist/cjs/index.js"
   },
+  "files": ["dist"],
   "scripts": {
     "clean": "rm -rf dist",
     "build": "pnpm run clean && tsc -p tsconfig.esm.json && tsc -p tsconfig.cjs.json",
@@ -61,5 +53,8 @@
   },
   "peerDependencies": {
     "@mocks-server/core": "~4.0"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }

@@ -32,7 +32,7 @@
     "*.{js,ts,json}": "biome check --apply --no-errors-on-unmatched"
   },
   "devDependencies": {
-    "@biomejs/biome": "~1.5",
+    "@biomejs/biome": "~1.6",
     "@mocks-server/core": "~4.0",
     "@types/express": "~4.17",
     "@types/jest": "~29.5",

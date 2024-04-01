@@ -28,12 +28,11 @@
     "default": "./dist/cjs/index.js"
   },
   "scripts": {
-    "clean": "rm -rf dist tests/coverage",
-    "prebuild": "pnpm run check",
+    "clean": "rm -rf dist",
     "build": "pnpm run clean && tsc -p tsconfig.esm.json && tsc -p tsconfig.cjs.json",
     "check": "biome check .",
     "check:fix": "biome check --apply .",
-    "test": "pnpm run build && jest",
+    "test": "pnpm run check && pnpm run build && jest",
     "lint-staged": "lint-staged",
     "prepare": "husky"
   },

@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('node:path');
 const crossFetch = require('cross-fetch');
 const waitOn = require('wait-on');
 const Core = require('@mocks-server/core');

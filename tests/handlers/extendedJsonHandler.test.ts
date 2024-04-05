@@ -2,6 +2,7 @@
 const { startServer, doFetch, waitForServer } = require('../support/helper');
 
 describe('extended json handler', () => {
+  // biome-ignore lint/suspicious/noExplicitAny: testing code
   let server: any;
 
   beforeAll(async () => {

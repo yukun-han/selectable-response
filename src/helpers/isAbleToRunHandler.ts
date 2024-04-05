@@ -2,7 +2,7 @@ import type { Request } from 'express';
 import { query } from 'jsonpath';
 import type { AllSelectorProps, SelectorBase } from '../types.js';
 
-const notMatchSelector = (value: any, selector: SelectorBase): boolean => {
+const notMatchSelector = (value: string, selector: SelectorBase): boolean => {
   let conditionsNotMatches = false;
   if (selector.equals) {
     conditionsNotMatches = !(value === selector.equals);
@@ -48,7 +48,8 @@ const isAbleToRunMiddleware = (selectors: AllSelectorProps[], req: Request): boo
         const queryConditions = req.query[selector.queryParams];
         const noQueryConditions = !queryConditions;
 
-        if (noQueryConditions || notMatchSelector(queryConditions, selector)) {
+        // TODO: may need to handle string array
+        if (noQueryConditions || notMatchSelector(queryConditions as string, selector)) {
           satisfySelectorsCondition = false;
         }
       }

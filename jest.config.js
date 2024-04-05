@@ -8,5 +8,7 @@ export default {
     '^(\\.{1,2}/.*)\\.js$': '$1',
   },
   testMatch: ['**/tests/**/*.test.ts'],
+  coverageDirectory: 'tests/coverage',
+  collectCoverageFrom: ['src/**/*.ts'],
   maxWorkers: 1,
 };

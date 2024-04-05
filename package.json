@@ -23,8 +23,10 @@
     "clean": "rm -rf dist",
     "build": "pnpm run clean && tsc -p tsconfig.esm.json && tsc -p tsconfig.cjs.json",
     "check": "biome check .",
-    "check:fix": "biome check --apply .",
-    "test": "pnpm run check && pnpm run build && jest",
+    "check:ci": "biome ci --diagnostic-level=error .",
+    "check:fix": "biome check --apply-unsafe .",
+    "test": "pnpm run check && pnpm run build && jest --coverage",
+    "test:ci": "pnpm run check:ci && pnpm run build && jest",
     "lint-staged": "lint-staged",
     "prepare": "husky"
   },
@@ -32,24 +34,24 @@
     "*.{js,ts,json}": "biome check --apply --no-errors-on-unmatched"
   },
   "devDependencies": {
-    "@biomejs/biome": "~1.5",
+    "@biomejs/biome": "^1.6.4",
     "@mocks-server/core": "~4.0",
     "@types/express": "~4.17",
     "@types/jest": "~29.5",
     "@types/jsonpath": "~0.2",
-    "@types/node": "~20.12",
+    "@types/node": "^20.10.0",
     "ajv": "~8.12",
     "husky": "~9.0",
     "jest": "~29.7",
     "lint-staged": "~15.2",
-    "radash": "^12.1.0",
+    "radash": "~12.1.0",
     "ts-jest": "~29.1",
-    "typescript": "~5.3",
+    "typescript": "^5.3.3",
     "cross-fetch": "^4.0.0",
     "wait-on": "^7.2.0"
   },
   "dependencies": {
-    "jsonpath": "~1.1"
+    "jsonpath": "^1.1.1"
   },
   "peerDependencies": {
     "@mocks-server/core": "~4.0",

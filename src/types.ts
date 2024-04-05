@@ -27,9 +27,9 @@ export type PathSelectorSchemaType = JSONSchemaType<PathSelectorProps>;
 export type QuerySelectorSchemaType = JSONSchemaType<QuerySelectorProps>;
 
 export type MockServerCore = {
-  logger: any;
+  logger: object;
 };
 
-export type MockServerOptions = Record<string, any> & {
+export type MockServerOptions = Record<string, unknown> & {
   selectors: AllSelectorProps[];
 };

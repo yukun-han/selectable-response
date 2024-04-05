@@ -38,7 +38,7 @@
     "@types/express": "~4.17",
     "@types/jest": "~29.5",
     "@types/jsonpath": "~0.2",
-    "@types/node": "~20.11",
+    "@types/node": "~20.12",
     "ajv": "~8.12",
     "husky": "~9.0",
     "jest": "~29.7",

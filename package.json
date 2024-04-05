@@ -23,7 +23,8 @@
     "clean": "rm -rf dist",
     "build": "pnpm run clean && tsc -p tsconfig.esm.json && tsc -p tsconfig.cjs.json",
     "check": "biome check .",
-    "check:fix": "biome check --apply .",
+    "check:ci": "biome ci --diagnostic-level=error .",
+    "check:fix": "biome check --apply-unsafe .",
     "test": "pnpm run check && pnpm run build && jest",
     "lint-staged": "lint-staged",
     "prepare": "husky"
@@ -32,7 +33,7 @@
     "*.{js,ts,json}": "biome check --apply --no-errors-on-unmatched"
   },
   "devDependencies": {
-    "@biomejs/biome": "~1.6",
+    "@biomejs/biome": "^1.6.4",
     "@mocks-server/core": "~4.0",
     "@types/express": "~4.17",
     "@types/jest": "~29.5",

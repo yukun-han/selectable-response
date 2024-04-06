@@ -1,6 +1,6 @@
 {
   "name": "selectable-response",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Customized variant handlers for Mocks Server to return response by selectors.",
   "type": "module",
   "keywords": ["Mocks Server", "mock", "variant handler", "plugin"],

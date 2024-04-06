@@ -1,5 +1,5 @@
 {
-  "name": "selectable-response",
+  "name": "@yukun-han/selectable-response",
   "version": "0.1.2",
   "description": "Customized variant handlers for Mocks Server to return response by selectors.",
   "type": "module",

@@ -4,8 +4,11 @@ on:
     types: [published]
 
 jobs:
-  build:
+  build-and-publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -22,6 +25,7 @@ jobs:
           node-version-file: ".nvmrc"
           cache: pnpm
           registry-url: https://npm.pkg.github.com
+          scope: "@yukun-han"
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile

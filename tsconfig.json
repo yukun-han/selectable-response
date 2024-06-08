@@ -1,14 +1,13 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
-    "lib": ["ES2022"],
     "rootDir": "src",
-    "module": "Node16",
+    "module": "NodeNext",
+    "emitDeclarationOnly": true,
     "declaration": true,
-    "declarationDir": "dist/types",
+    "declarationMap": true,
+    "outDir": "dist/types",
     "allowSyntheticDefaultImports": true,
     "alwaysStrict": true,
-    "sourceMap": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
@@ -16,13 +15,8 @@
     "noUnusedParameters": true,
     "noImplicitAny": false,
     "noImplicitThis": false,
-    "strictNullChecks": true,
-    "removeComments": true
+    "strictNullChecks": true
   },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "tests/**/*"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "tests/**/*"]
 }

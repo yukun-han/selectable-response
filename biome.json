@@ -1,8 +1,8 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.6.4/schema.json",
   "files": {
-    "ignore": ["tests/coverage"],
-    "include": ["src/**/*.*", "tests/**/*.*"],
+    "ignore": ["tests/coverage", "node_modules", "dist"],
+    "include": ["*.json", "**/*.js", "**/*.ts"],
     "ignoreUnknown": true
   },
   "organizeImports": {
@@ -20,14 +20,14 @@
   "formatter": {
     "formatWithErrors": true,
     "indentStyle": "space",
-    "lineWidth": 120
+    "lineWidth": 100
   },
   "javascript": {
     "formatter": {
       "quoteStyle": "single",
       "jsxQuoteStyle": "single",
       "indentStyle": "space",
-      "lineWidth": 120
+      "lineWidth": 100
     }
   }
 }

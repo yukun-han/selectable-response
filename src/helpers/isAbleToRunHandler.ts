@@ -20,7 +20,9 @@ const isAbleToRunMiddleware = (selectors: AllSelectorProps[], req: Request): boo
       if ('bodyJsonPath' in selector) {
         const bodyConditions = query(req.body, selector.bodyJsonPath);
         const noBodyConditions = bodyConditions.length === 0;
-        const noBodyConditionsEqual = bodyConditions.every((result) => !(result === selector.equals));
+        const noBodyConditionsEqual = bodyConditions.every(
+          (result) => !(result === selector.equals),
+        );
         if (noBodyConditions || noBodyConditionsEqual) {
           satisfySelectorsCondition = false;
         }

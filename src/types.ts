@@ -19,7 +19,11 @@ type QuerySelectorProps = SelectorBase<{
   queryParams: string;
 }>;
 
-export type AllSelectorProps = BodySelectorProps | HeaderSelectorProps | PathSelectorProps | QuerySelectorProps;
+export type AllSelectorProps =
+  | BodySelectorProps
+  | HeaderSelectorProps
+  | PathSelectorProps
+  | QuerySelectorProps;
 
 export type BodySelectorSchemaType = JSONSchemaType<BodySelectorProps>;
 export type HeaderSelectorSchemaType = JSONSchemaType<HeaderSelectorProps>;

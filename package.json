@@ -4,25 +4,28 @@
   "description": "Customized variant handlers for Mocks Server to return response by selectors.",
   "type": "module",
   "keywords": ["Mocks Server", "mock", "variant handler", "plugin"],
-  "contributors": ["Yukun Han <yukun.han@thoughtworks.com>", "Han Chen <han.chen1@thoughtworks.com>"],
+  "contributors": [
+    "Yukun Han <yukun.han@thoughtworks.com>",
+    "Han Chen <han.chen1@thoughtworks.com>"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/yukun-han/selectable-response.git"
   },
   "license": "MIT",
   "packageManager": "pnpm@8.15.1",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
-  "types": "./dist/types/index.d.ts",
+  "main": "dist/cjs/index.cjs",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
   "exports": {
+    "types": "./dist/types/index.d.ts",
     "import": "./dist/esm/index.js",
-    "require": "./dist/cjs/index.js",
-    "default": "./dist/cjs/index.js"
+    "require": "./dist/cjs/index.cjs"
   },
-  "files": ["dist"],
+  "files": ["dist", "README.md", "LICENSE"],
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "pnpm run clean && tsc -p tsconfig.esm.json && tsc -p tsconfig.cjs.json",
+    "build": "pnpm run clean && tsc && npx rollup -c rollup.config.js",
     "check": "biome check .",
     "check:ci": "biome ci --diagnostic-level=error .",
     "check:fix": "biome check --apply-unsafe .",
@@ -35,20 +38,23 @@
     "*.{js,ts,json}": "biome check --apply --no-errors-on-unmatched"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.6.4",
-    "@mocks-server/core": "~4.0",
-    "@types/express": "~4.17",
+    "@biomejs/biome": "^1.7.3",
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
     "@types/jest": "~29.5",
     "@types/jsonpath": "~0.2",
     "@types/node": "^20.10.0",
-    "ajv": "~8.14",
+    "cross-fetch": "^4.0.0",
     "husky": "~9.0",
     "jest": "~29.7",
     "lint-staged": "~15.2",
     "radash": "~12.1.0",
+    "rollup": "^4.18.0",
     "ts-jest": "~29.1",
     "typescript": "^5.3.3",
-    "cross-fetch": "^4.0.0",
     "wait-on": "^7.2.0"
   },
   "dependencies": {
@@ -56,6 +62,7 @@
   },
   "peerDependencies": {
     "@mocks-server/core": "~4.0",
+    "@types/express": "~4.17",
     "ajv": "~8.14"
   },
   "engines": {

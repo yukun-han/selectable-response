@@ -1,19 +1,6 @@
-// @ts-ignore
-const { startServer, doFetch, waitForServer } = require('../support/helper');
+import { doFetch } from '../support/helper';
 
 describe('extended json handler', () => {
-  // biome-ignore lint/suspicious/noExplicitAny: testing code
-  let server: any;
-
-  beforeAll(async () => {
-    server = await startServer();
-    await waitForServer();
-  });
-
-  afterAll(async () => {
-    await server.stop();
-  });
-
   describe('get result', () => {
     it('should return result', async () => {
       const response = await doFetch('/api/ext-json/1');
@@ -46,6 +33,24 @@ describe('extended json handler', () => {
       expect(response.body).toEqual({
         id: 'query-param',
         result: 'Query Param: r=result',
+      });
+    });
+  });
+
+  describe('post', () => {
+    it('should return result by body json path selector', async () => {
+      const response = await doFetch('/api/ext-json/book', {
+        method: 'POST',
+        body: JSON.stringify({
+          author: 'Herman Melville',
+        }),
+      });
+      expect(response.body).toEqual({
+        category: 'fiction',
+        author: 'Herman Melville',
+        title: 'Moby Dick',
+        isbn: '0-553-21311-3',
+        price: 8.99,
       });
     });
   });

@@ -8,7 +8,7 @@ module.exports = [
         id: 'query-param',
         type: 'extended-middleware',
         options: {
-          selectors: [{ queryParams: 'r', equals: 'result' }],
+          selectors: [{ queryParams: 'r', matchReg: 'r.*' }],
           middleware: async (req, res) => {
             res.status(200).send({
               id: 'query-param',

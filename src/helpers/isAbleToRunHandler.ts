@@ -1,5 +1,5 @@
 import type { Request } from 'express';
-import { query } from 'jsonpath';
+import { JSONPath } from 'jsonpath-plus';
 import type { AllSelectorProps, SelectorBase } from '../types.js';
 
 const notMatchSelector = (value: string, selector: SelectorBase): boolean => {
@@ -18,7 +18,7 @@ const isAbleToRunMiddleware = (selectors: AllSelectorProps[], req: Request): boo
   if (selectors) {
     for (const selector of selectors) {
       if ('bodyJsonPath' in selector) {
-        const bodyConditions = query(req.body, selector.bodyJsonPath);
+        const bodyConditions = JSONPath({ path: selector.bodyJsonPath, json: req.body });
         const noBodyConditions = bodyConditions.length === 0;
         const noBodyConditionsEqual = bodyConditions.every(
           (result) => !(result === selector.equals),

@@ -1,3 +1,5 @@
+/** @type {import('jest').Config} */
+
 export default {
   testEnvironment: 'node',
   preset: 'ts-jest/presets/default-esm',
@@ -11,4 +13,5 @@ export default {
   coverageDirectory: 'tests/coverage',
   collectCoverageFrom: ['src/**/*.ts'],
   maxWorkers: 1,
+  setupFilesAfterEnv: ['<rootDir>/tests/support/setup-jest.ts'],
 };

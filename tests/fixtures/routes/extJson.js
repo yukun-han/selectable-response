@@ -8,7 +8,7 @@ module.exports = [
         id: 'query-param',
         type: 'extended-json',
         options: {
-          selectors: [{ queryParams: 'r', equals: 'result' }],
+          selectors: [{ queryParams: 'r', matchReg: 'r.*' }],
           status: 200,
           body: {
             id: 'query-param',
@@ -48,6 +48,28 @@ module.exports = [
           body: {
             id: 'normal',
             result: 'John Doe',
+          },
+        },
+      },
+    ],
+  },
+  {
+    id: 'ext-json-post',
+    url: '/api/ext-json/book',
+    method: 'POST',
+    variants: [
+      {
+        id: 'body-json-path',
+        type: 'extended-json',
+        options: {
+          selectors: [{ bodyJsonPath: '$.author', equals: 'Herman Melville' }],
+          status: 200,
+          body: {
+            category: 'fiction',
+            author: 'Herman Melville',
+            title: 'Moby Dick',
+            isbn: '0-553-21311-3',
+            price: 8.99,
           },
         },
       },

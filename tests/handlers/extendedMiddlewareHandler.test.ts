@@ -1,19 +1,6 @@
-// @ts-ignore
-const { startServer, doFetch, waitForServer } = require('../support/helper');
+import { doFetch } from '../support/helper';
 
 describe('extended middleware handler', () => {
-  // biome-ignore lint/suspicious/noExplicitAny: testing code
-  let server: any;
-
-  beforeAll(async () => {
-    server = await startServer();
-    await waitForServer();
-  });
-
-  afterAll(async () => {
-    await server.stop();
-  });
-
   describe('get result', () => {
     it('should return result', async () => {
       const response = await doFetch('/api/ext-middleware/1');

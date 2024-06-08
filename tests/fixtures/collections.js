@@ -5,6 +5,7 @@ module.exports = [
       'ext-json:query-param',
       'ext-json:path-variable',
       'ext-json:header-key',
+      'ext-json-post:body-json-path',
       'ext-json:normal',
       'ext-middleware:query-param',
       'ext-middleware:path-variable',

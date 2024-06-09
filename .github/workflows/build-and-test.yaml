@@ -57,3 +57,4 @@ jobs:
         with:
           branches: "*"
           coverage-summary-path: ./tests/coverage/coverage-summary.json
+          no-commit: true

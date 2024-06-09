@@ -4,11 +4,10 @@
 ![NPM Version](https://img.shields.io/npm/v/%40yukun-han%2Fselectable-response)
 ![NPM Type Definitions](https://img.shields.io/npm/types/%40yukun-han%2Fselectable-response)
 
-![Branches](./badges/coverage-branches.svg)
-![Functions](./badges/coverage-functions.svg)
-![Lines](./badges/coverage-lines.svg)
-![Statements](./badges/coverage-statements.svg)
-![Coverage total](./badges/coverage-total.svg)
+![Branches](./tests/badges/badge-branches.svg)
+![Functions](./tests/badges/badge-functions.svg)
+![Lines](./tests/badges/badge-lines.svg)
+![Statements](./tests/badges/badge-statements.svg)
 
 [![Build and test](https://github.com/yukun-han/selectable-response/actions/workflows/build-and-test.yaml/badge.svg)](https://github.com/yukun-han/selectable-response/actions/workflows/build-and-test.yaml)
 [![Publish to github packages](https://github.com/yukun-han/selectable-response/actions/workflows/publish-github-packages.yaml/badge.svg)](https://github.com/yukun-han/selectable-response/actions/workflows/publish-github-packages.yaml)

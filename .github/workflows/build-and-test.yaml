@@ -46,14 +46,5 @@ jobs:
       - name: 📥 Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: 🛠️ Build package
-        run: pnpm run build
-
       - name: 🔍 Test package
         run: pnpm test:ci
-
-      - name: ⚙️ Generating coverage badges
-        uses: jpb06/coverage-badges-action@latest
-        with:
-          branches: main
-          coverage-summary-path: ./tests/coverage/coverage-summary.json

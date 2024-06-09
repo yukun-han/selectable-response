@@ -10,8 +10,10 @@ export default {
     '^(\\.{1,2}/.*)\\.js$': '$1',
   },
   testMatch: ['**/tests/**/*.test.ts'],
+  collectCoverage: true,
   coverageDirectory: 'tests/coverage',
   collectCoverageFrom: ['src/**/*.ts'],
+  coverageReporters: ['clover', 'lcov', 'text', 'json-summary'],
   maxWorkers: 1,
   setupFilesAfterEnv: ['<rootDir>/tests/support/setup-jest.ts'],
 };

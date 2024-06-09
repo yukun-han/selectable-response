@@ -1,5 +1,19 @@
 # selectable-response
 
+![NPM License](https://img.shields.io/npm/l/%40yukun-han%2Fselectable-response)
+![NPM Version](https://img.shields.io/npm/v/%40yukun-han%2Fselectable-response)
+![NPM Type Definitions](https://img.shields.io/npm/types/%40yukun-han%2Fselectable-response)
+
+![Branches](./badges/coverage-branches.svg)
+![Functions](./badges/coverage-functions.svg)
+![Lines](./badges/coverage-lines.svg)
+![Statements](./badges/coverage-statements.svg)
+![Coverage total](./badges/coverage-total.svg)
+
+[![Build and test](https://github.com/yukun-han/selectable-response/actions/workflows/build-and-test.yaml/badge.svg)](https://github.com/yukun-han/selectable-response/actions/workflows/build-and-test.yaml)
+[![Publish to github packages](https://github.com/yukun-han/selectable-response/actions/workflows/publish-github-packages.yaml/badge.svg)](https://github.com/yukun-han/selectable-response/actions/workflows/publish-github-packages.yaml)
+[![Publish to npm](https://github.com/yukun-han/selectable-response/actions/workflows/publish-npm.yaml/badge.svg)](https://github.com/yukun-han/selectable-response/actions/workflows/publish-npm.yaml)
+
 Customized variant handlers for Mocks Server to return response by selectors.
 
 Extended official `json` and `middleware` variant handlers to allow only returning response when given request selectors are satisfied.

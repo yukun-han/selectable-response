@@ -27,27 +27,33 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: ⬇️ Checkout
         uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v3
+      - uses: 📦 pnpm/action-setup@v3
         name: Install pnpm
         with:
           version: 8
           run_install: false
 
-      - name: Install Node.js
+      - name: ⎔ Install Node.js
         uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           cache: pnpm
           registry-url: https://registry.npmjs.org
 
-      - name: Install dependencies
+      - name: 📥 Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build package
+      - name: 🛠️ Build package
         run: pnpm run build
 
-      - name: Test package
+      - name: 🔍 Test package
         run: pnpm test:ci
+
+      - name: ⚙️ Generating coverage badges
+        uses: jpb06/coverage-badges-action@latest
+        with:
+          branches: main
+          coverage-summary-path: ./tests/coverage/coverage-summary.json

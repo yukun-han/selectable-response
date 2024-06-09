@@ -4,7 +4,6 @@
     "module": "NodeNext",
     "emitDeclarationOnly": true,
     "declaration": true,
-    "declarationMap": true,
     "outDir": "dist/types",
     "allowSyntheticDefaultImports": true,
     "alwaysStrict": true,

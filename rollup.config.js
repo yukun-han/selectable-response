@@ -31,6 +31,7 @@ export default defineConfig({
       entryFileNames: '[name].cjs',
       exports: 'named',
       format: 'cjs',
+      preserveModules: true,
       sourcemap: true,
     },
     {
@@ -38,6 +39,7 @@ export default defineConfig({
       entryFileNames: '[name].js',
       exports: 'named',
       format: 'esm',
+      preserveModules: true,
       sourcemap: true,
     },
   ],
@@ -50,9 +52,9 @@ export default defineConfig({
       noEmit: true,
       emitDeclarationOnly: false,
       declaration: false,
-      declarationMap: false,
       outDir: undefined,
     }),
   ],
   external,
+  treeshake: 'smallest',
 });

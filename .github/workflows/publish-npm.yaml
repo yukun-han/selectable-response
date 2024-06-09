@@ -7,29 +7,29 @@ jobs:
   build-and-publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: ⬇️ Checkout
         uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v3
-        name: Install pnpm
+      - name: 📦 Install pnpm
+        uses: pnpm/action-setup@v3
         with:
           version: 8
           run_install: false
 
-      - name: Install Node.js
+      - name: ⎔ Install Node.js
         uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           cache: pnpm
           registry-url: https://registry.npmjs.org
 
-      - name: Install dependencies
+      - name: 📥 Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build package
+      - name: 🛠️ Build package
         run: pnpm run build
 
-      - name: Publish 🚀
+      - name: 🚀 Publish
         shell: bash
         run: pnpm publish --access public --no-git-checks
         env:

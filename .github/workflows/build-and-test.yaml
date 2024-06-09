@@ -55,5 +55,5 @@ jobs:
       - name: ⚙️ Generating coverage badges
         uses: jpb06/coverage-badges-action@latest
         with:
-          branches: main
+          branches: "*"
           coverage-summary-path: ./tests/coverage/coverage-summary.json

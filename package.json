@@ -69,5 +69,10 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "resolutions": {
+    "minimist": "^1.2.8",
+    "got": "^11.8.5",
+    "express": "^4.19.2"
   }
 }

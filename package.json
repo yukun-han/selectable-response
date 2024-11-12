@@ -60,7 +60,7 @@
     "wait-on": "^7.2.0"
   },
   "dependencies": {
-    "jsonpath-plus": "^9.0.0"
+    "jsonpath-plus": "^10.0.7"
   },
   "peerDependencies": {
     "@mocks-server/core": "~4.0",

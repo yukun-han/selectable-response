@@ -22,7 +22,7 @@ dependencies:
     version: 8.14.0
   jsonpath-plus:
     specifier: ^10.0.7
-    version: 10.2.0
+    version: 10.3.0
 
 devDependencies:
   '@biomejs/biome':
@@ -3409,8 +3409,8 @@ packages:
       graceful-fs: 4.2.11
     dev: false
 
-  /jsonpath-plus@10.2.0:
-    resolution: {integrity: sha512-T9V+8iNYKFL2n2rF+w02LBOT2JjDnTjioaNFrxRy0Bv1y/hNsqR/EBK7Ojy2ythRHwmz2cRIls+9JitQGZC/sw==}
+  /jsonpath-plus@10.3.0:
+    resolution: {integrity: sha512-8TNmfeTCk2Le33A3vRRwtuworG/L5RrgMvdjhKZxvyShO+mBu2fP50OWUjRLNtvw344DdDarFh9buFAZs5ujeA==}
     engines: {node: '>=18.0.0'}
     hasBin: true
     dependencies:
